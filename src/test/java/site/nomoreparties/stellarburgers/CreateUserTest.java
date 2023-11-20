@@ -57,7 +57,6 @@ public class CreateUserTest {
     @Test
     @DisplayName("Попытка создать пользователя с не заполненным обязательным полем email")
     public void userWithoutEmailRegisterTest() {
-        User.withAllFields();
         userClient.registerUser(User.withoutMail())
                 .then().statusCode(SC_FORBIDDEN)
                 .and()
@@ -67,7 +66,6 @@ public class CreateUserTest {
     @Test
     @DisplayName("Попытка создать пользователя с не заполненным обязательным полем password")
     public void userWithoutPasswordRegisterTest() {
-        User.withAllFields();
         userClient.registerUser(User.withoutPassword())
                 .then().statusCode(SC_FORBIDDEN)
                 .and()
